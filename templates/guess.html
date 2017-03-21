@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess Game</title>
+</head>
+<body>
+<h1>Guess Game</h1>
+<form action="" method="post" name="guess">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <p>
+        Please enter a number between 1 and 1000:
+    </p>
+    <input type="number" name='number'/>
+    <input type="submit" value="Guess"/>
+</form>
+
+</body>
+</html>
